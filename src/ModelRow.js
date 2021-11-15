@@ -4,17 +4,19 @@ import help from './images/help.svg'
 import ModelList from './ModelList';
 import './App.css';
 
-export default function ModelRow(){
-    return(
-        <div class='content_row'>
-            <img src={c3Image} class='left-vertical'alt="code3" />
-            <div class = 'models'>
-                <div class = 'title'>
-                    <div>Models</div>
-                    <img src={help} class = 'help-icon' alt='help'/>
+export default class ModelRow extends React.Component{
+    render(){
+        return(
+            <div class='content_row'>
+                <img src={c3Image} class='left-vertical'alt="code3" />
+                <div class = 'models'>
+                    <div class = 'title'>
+                        <div>Models</div>
+                        <img src={help} class = 'help-icon' alt='help'/>
+                    </div>
+                    <ModelList/>
                 </div>
-                <ModelList/>
             </div>
-        </div>
-    );
+        );
+    }
 } 
