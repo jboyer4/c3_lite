@@ -7,7 +7,7 @@ export default class ModelList extends Component {
     super();
     this.getModelList();
     this.state = {
-      modelList : []
+      modelList : ["mode1", "mode2"]
     };
   }
   
@@ -21,19 +21,31 @@ export default class ModelList extends Component {
     const url = "https://sim-new-test.eastus.azurecontainer.io/C3mSim/Model"
     axios.get(url)
       .then(response => this.setState({
-        modelList : response
+        //modelList : response
       }));
+  }
+
+  handleRadioChange(event){
+    alert(event.target.value);
   }
 
   render() {
     return (
-        <div class = 'bordered-content'>
-          {
-          this.state.modelList.map(model => (
-            <li className="model-list-item">
-              {model}
-            </li>
-          ))}
+        <div 
+          class = 'bordered-content'
+          onChange={this.handleRadioChange} 
+        >
+            {this.state.modelList.map(model => (
+              <React.Fragment>
+              <input
+                type="radio"
+                name="model-list-item"
+                value={model}
+               />
+                <label>{model}</label>
+                <br/>
+                </React.Fragment>
+            ))}
         </div>
     );
   }
