@@ -3,8 +3,8 @@ import axios from "axios";
 /*Todo: get model list on load*/
 
 export default class ModelList extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.getModelList();
     this.state = {
       modelList : ["mode1", "mode2"]
@@ -25,8 +25,8 @@ export default class ModelList extends Component {
       }));
   }
 
-  handleRadioChange(event){
-    alert(event.target.value);
+  handleRadioChange = (event) => {
+    this.props.radioChange(event.target.value);
   }
 
   render() {

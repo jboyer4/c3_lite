@@ -6,7 +6,7 @@ import axios from "axios";
 //https://masteringjs.io/tutorials/axios/form-data
 
 const FormData = require('form-data');
-export default function CallFileUploader(){ 
+export default function CallFileUploader({passCallFile}){ 
     const [selectedFile, setSelectedFile] = useState();
 	const [isFileSelected, setIsFileSelected] = useState(false);
 
@@ -14,6 +14,7 @@ export default function CallFileUploader(){
 		setSelectedFile(event.target.files[0]);
 		setIsFileSelected(true);
     }
+
     const  handleSubmission = () => {
         const csvContent = new FormData();
         csvContent.append('call_file', selectedFile);
@@ -22,7 +23,10 @@ export default function CallFileUploader(){
             headers: {
               'Content-Type': 'multipart/form-data'
             }
-        });
+        }).then(
+            passCallFile(selectedFile)
+        )
+
         //Clear uploaded file from form
         setSelectedFile();
         setIsFileSelected(false);

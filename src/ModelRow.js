@@ -5,6 +5,11 @@ import ModelList from './ModelList';
 import './App.css';
 
 export default class ModelRow extends React.Component{
+    
+    passUpModel = (selectedModel) => {
+        this.props.setSelectedModel(selectedModel);
+    }
+    
     render(){
         return(
             <div class='content_row'>
@@ -14,7 +19,7 @@ export default class ModelRow extends React.Component{
                         <div>Models</div>
                         <img src={help} class = 'help-icon' alt='help'/>
                     </div>
-                    <ModelList/>
+                    <ModelList radioChange = {this.passUpModel}/>
                 </div>
             </div>
         );
