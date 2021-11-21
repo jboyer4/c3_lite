@@ -7,7 +7,7 @@ import CallFileUploader from './FileUploader';
 
 export let fullAudit = false;
 //const baseURL = "https://web.postman.co/workspace/My-Workspace~076459d7-21a1-40e1-8d17-361d875d27c3/mock/8b3f52ef-6c19-40ab-8c35-74485711f436";
-const baseURL = "http://sim-new-test.eastus.azurecontainer.io/"
+const baseURL = "https://sim-new-test.eastus.azurecontainer.io/"
 function runSimulation(){
     //todo: correct params
     const headers = {

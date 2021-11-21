@@ -18,7 +18,7 @@ export default class ModelList extends Component {
   async getModelList(){
     //todo get correct address
     //const url = "https://web.postman.co/workspace/My-Workspace~076459d7-21a1-40e1-8d17-361d875d27c3/mock/8b3f52ef-6c19-40ab-8c35-74485711f436";
-    const url = "http://sim-new-test.eastus.azurecontainer.io/C3mSim/Model"
+    const url = "http:s//sim-new-test.eastus.azurecontainer.io/C3mSim/Model"
     axios.get(url)
       .then(response => this.setState({
         modelList : response
