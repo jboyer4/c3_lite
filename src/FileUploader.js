@@ -24,7 +24,7 @@ export default function CallFileUploader({passCallFile}){
               'Content-Type': 'multipart/form-data'
             }
         }).then(
-            passCallFile(selectedFile)
+            passCallFile(selectedFile.name)
         )
 
         //Clear uploaded file from form
