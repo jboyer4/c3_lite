@@ -14,11 +14,12 @@ export default function CallRow({model}){
     let callFile = '';
     
     const runSimulation = () => {
-        if(model === ''){
+        alert("Model: " + model + "\nCall: " + callFile)
+        if(!model){
             alert('Please select a model to use');
             return;
         }
-        if(callFile === ''){
+        if(!callFile){
             alert('Please upload a call file to use');
             return;
         }
