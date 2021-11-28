@@ -7,7 +7,7 @@ export default class ModelList extends Component {
     super(props);
     this.getModelList();
     this.state = {
-      modelList : ["mode1", "mode2"]
+      modelList : []
     };
   }
   
@@ -16,14 +16,14 @@ export default class ModelList extends Component {
   }
 
   async getModelList(){
-    //todo get correct address
-    //const url = "https://web.postman.co/workspace/My-Workspace~076459d7-21a1-40e1-8d17-361d875d27c3/mock/8b3f52ef-6c19-40ab-8c35-74485711f436";
-    const url = "https://sim-new-test.eastus.azurecontainer.io/C3mSim/Model"
-    axios.get(url)
-      .then(response => this.setState({
+    axios.get(`http://c3m-sim-service.eastus.azurecontainer.io/C3mSim/Model/`)
+      .then(response => {
+        console.log(response);
+        //this.setState({
         //modelList : response
-      }));
-  }
+        //}); 
+     })
+  };
 
   handleRadioChange = (event) => {
     this.props.radioChange(event.target.value);
