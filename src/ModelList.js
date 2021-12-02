@@ -7,7 +7,7 @@ export default class ModelList extends Component {
     super(props);
     this.getModelList();
     this.state = {
-      modelList : []
+      modelList : ["model1", "model2", "model3"]
     };
   }
   
